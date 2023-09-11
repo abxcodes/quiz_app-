@@ -1,0 +1,14 @@
+<div style="background-color: aquamarine;">
+  <div *ngFor="let question of questions; let i = index">
+    <h3>{{ question.question }}</h3>
+    <div *ngFor="let option of question.options; let j = index">
+      <label>
+        <input type="checkbox" [attr.name]="'q' + i" [value]="option" [(ngModel)]="selectedOptions[i][j]">
+        {{ option }}
+      </label>
+    </div>
+  </div>
+  <button (click)="submitQuiz()">Submit Quiz</button>
+
+
+</div>
